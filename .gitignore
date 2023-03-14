@@ -8,3 +8,5 @@ demo
 /.tracecompass
 build/
 bin/
+cmake-build-debug
+cmake-build-release
