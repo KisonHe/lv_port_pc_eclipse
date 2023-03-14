@@ -76,21 +76,16 @@ lv_obj_t * root_page_k;
  *  STATIC PROTOTYPES
  **********************/
 
-void kexample_msgbox_1(lv_obj_t* p)
+void kexample_msgbox_1()
 {
     static const char * btns[] = {"Apply", "Close", ""};
-
-    static const lv_style_prop_t trans_props[] = {
-            LV_STYLE_BG_OPA, LV_STYLE_BG_COLOR,
-            0, /*End marker*/
-    };
 
     static lv_style_t style1;
     lv_style_init(&style1);
 
     lv_style_set_bg_opa(&style1, LV_OPA_50);
 
-    lv_obj_t *  obj = lv_obj_create(p);
+    lv_obj_t * obj = lv_obj_create(lv_scr_act());
     lv_obj_center(obj);
     lv_obj_set_size(obj,LV_HOR_RES,LV_VER_RES);
     lv_obj_add_style(obj, &style1,0);
@@ -189,7 +184,8 @@ void klv_example_menu_5(lv_obj_t * p)
     lv_menu_clear_history(menu); /* Clear history because we will be showing the root page later */
     lv_menu_set_page(menu, root_page_k);
 
-    kexample_msgbox_1(lv_scr_act());
+    /// this makes the msg box
+    kexample_msgbox_1();
 
 }
 
